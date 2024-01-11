@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     updateCounter();
 
@@ -11,12 +12,19 @@ function updateCounter() {
         const activityStartTime = result.activityStartTime;
 
         if (activityStartTime) {
+            const stopTime = 10;
             const currentTime = new Date().getTime();
             const elapsedSeconds = (currentTime - activityStartTime) / 1000;
             const totalSeconds = totalTime + elapsedSeconds;
-
-            const counterElement = document.getElementById('counter');
-            counterElement.textContent = formatTime(totalSeconds);
+            console.log("total : ",totalSeconds)
+            if (totalSeconds > stopTime) {
+                console.log("stop");
+                window.open('alert/alert.html')
+                // -> inject class dans le DOM
+            } else {
+                const counterElement = document.getElementById('counter');
+                counterElement.textContent = formatTime(totalSeconds);
+            }
         }
     });
 }
@@ -26,3 +34,5 @@ function formatTime(totalSeconds) {
     const seconds = Math.floor(totalSeconds % 60);
     return `${minutes} minutes et ${seconds} secondes`;
 }
+
+

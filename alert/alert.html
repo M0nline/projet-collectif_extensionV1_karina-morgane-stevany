@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="alert.css" rel="stylesheet">
+</head>
+<body>
+<div class="blur-container" id="blur">
+     <div class="center">
+        <button id="open-popup-btn" onclick="showPopup()">Open Popup</button>
+    </div>
+</div>
+    <div class="popup center" >
+    <div class="icon">
+        <i class="fa-solid fa-check"></i>
+        <lord-icon src="https://cdn.lordicon.com/yqpvgvgs.json"
+        trigger="loop"
+        state="loop-cycle"
+        style="width:100px;height:100px">
+        </lord-icon>
+        
+    </div>
+    <div class="title">
+        Finally!!
+    </div>
+    <div class="description">
+        <p>Good job, it's time for a break!<br>
+        Take a break, you deserve it 😉</p>
+    </div>
+    <div class="dismiss-btn">
+        <button id="dismiss-popup-btn" onclick="closePopup()">
+            Ok
+        </button>
+    </div>
+    </div>
+   
+
+    <script src="alert/alert.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+ 
+</body>
+</html>

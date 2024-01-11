@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Minuteur",
+    "name": "GoRest!",
     "version": "1.0",
-    "description": "Compter le temps passé sur le navigateur",
+    "description": "Prends des pauses",
     "permissions": [
         "activeTab",
         "storage"
@@ -25,5 +25,11 @@
             "48": "images/icon-48.png",
             "128": "images/icon-128.png"
         }
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["scripts/content.js"]
+        }
+    ]
 }
