@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCounter();
     // Mettre à jour le compteur toutes les secondes
     setInterval(updateCounter, 1000);
-    updateBadge();
     // // Mettre à jour le badge toutes les minutes
     setInterval(updateBadge, 60000);
 });
@@ -43,6 +42,7 @@ function formatTime(totalSeconds) {
 
 const updateBadge = () => {
     console.log(minutesBadges);
-    chrome.action.setBadgeText({ text: minutesBadges });
+    let minutesString = String(minutesBadges);
+    chrome.action.setBadgeText({ text: minutesString });
 }
 
