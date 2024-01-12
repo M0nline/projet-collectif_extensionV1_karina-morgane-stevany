@@ -1,5 +1,5 @@
-const page = document.querySelector("body");
+// const page = document.querySelector("body");
 
-if (page) {
-    page.style.filter = "blur(15px)"
-}
+// if (page) {
+//     page.style.filter = "blur(15px)"
+// }

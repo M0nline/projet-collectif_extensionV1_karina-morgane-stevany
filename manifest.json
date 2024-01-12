@@ -5,7 +5,8 @@
     "description": "Prends des pauses",
     "permissions": [
         "activeTab",
-        "storage"
+        "storage",
+        "scripting"
     ],
     "background": {
         "service_worker": "background.js"
@@ -17,8 +18,9 @@
         "128": "images/icon-128.png"
     },
     "action": {
-        "default_title": "Stop!",
+        "default_title": "Afficher ou relancer le timer",
         "default_popup": "popup.html",
+        "default_icon": "images/icon-16.png",
         "icons": {
             "16": "images/icon-16.png",
             "32": "images/icon-32.png",
