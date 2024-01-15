@@ -3,7 +3,10 @@ const corps = document.querySelector('body');
 const person = chrome.runtime.getURL("images/icon-128.png");
 console.log("person:", person);
 let changeHTML = () => {
-  corps.innerHTML+= `<div class="popup-content" id="customPopup"><img src=${person}><h2>Finally!!</h2><p>Good job, it s time for a walk!<br> Take a break, you deserve it 😉</p><button onclick="closePopup()" class="dismiss">Close</button></div>`;
+  corps.innerHTML+= `<style>
+  div:not(#customPopup){filter: blur(10px)}
+</style><div class="popup-content" id="customPopup"><img src=${person}><h2>Finally!!</h2><p>Good job, it s time for a walk!<br> Take a break, you deserve it 😉</p><button onclick="closePopup()" class="dismiss">Close</button></div>`;
+  
 }
 
 // function showPopup() {
@@ -14,10 +17,11 @@ let changeHTML = () => {
 //     popup.innerHTML = '<div class="popup-content" id="close"><i class="fa-solid fa-check"></i><lord-icon src="https://cdn.lordicon.com/yqpvgvgs.json" trigger="loop" state="loop-cycle" style="width:90px; height:90px"></lord-icon><h2>Finally!!</h2><p>Good job, it s time for a break!<br> Take break, you deserve it 😉</p><button onclick="closePopup()" class="dismiss">Close</button></div>';
   
 //   }
-
+/*
 function blurPage() {
-  document.body.style.filter = 'blur(10px)'; 
-}
+  document.body:not(.popup-content).filter = "blur(10px)"
+
+}*/
 
   function closePopup() {
     const popup = document.getElementById('customPopup');
@@ -28,4 +32,4 @@ function blurPage() {
 
 
   setTimeout(changeHTML,5000); 
-  setTimeout(blurPage, 5000);
+  //setTimeout(blurPage, 5000);
