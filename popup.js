@@ -21,8 +21,7 @@ function updateCounter() {
             console.log("total : ",totalSeconds)
             // if (totalSeconds > stopTime) {
             //     console.log("stop");
-            //     //window.open('alert/alert.html')
-            //     // -> inject class dans le DOM
+            //     affiche popup.html
             // } else {
                 const counterElement = document.getElementById('counter');
                 counterElement.textContent = formatTime(totalSeconds);
@@ -36,7 +35,7 @@ function formatTime(totalSeconds) {
     const minutes = Math.floor(totalSeconds / 60);
     minutesBadges = minutes;
     const seconds = Math.floor(totalSeconds % 60);
-    const timing = `${minutes} minutes et ${seconds} secondes`;
+    const timing = `${minutes} minutes and ${seconds} seconds`;
     return timing;
 }
 
