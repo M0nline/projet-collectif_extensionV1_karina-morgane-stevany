@@ -18,13 +18,13 @@ function updateCounter() {
             const currentTime = new Date().getTime();
             const elapsedSeconds = (currentTime - activityStartTime) / 1000;
             const totalSeconds = totalTime + elapsedSeconds;
-            console.log("total : ",totalSeconds)
+            console.log("total : ", totalSeconds)
             // if (totalSeconds > stopTime) {
             //     console.log("stop");
             //     affiche popup.html
             // } else {
-                const counterElement = document.getElementById('counter');
-                counterElement.textContent = formatTime(totalSeconds);
+            const counterElement = document.getElementById('counter');
+            counterElement.textContent = formatTime(totalSeconds);
             // }
         }
     });

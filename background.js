@@ -13,3 +13,11 @@ chrome.windows.onCreated.addListener((activeInfo) => {
 chrome.windows.onRemoved.addListener(() => {
     chrome.storage.local.set({ activityStartTime: null });
 })
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.action === 'closeBrowser') {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            chrome.tabs.remove(tabs[0].id);
+        });
+    }
+});
