@@ -16,8 +16,10 @@ chrome.windows.onRemoved.addListener(() => {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.action === 'closeBrowser') {
-        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            chrome.tabs.remove(tabs[0].id);
+        chrome.tabs.query({ currentWindow: true }, function (tabs) {
+            for (var i = 0; i < tabs.length; i++) {
+                chrome.tabs.remove(tabs[i].id);
+            }
         });
     }
 });

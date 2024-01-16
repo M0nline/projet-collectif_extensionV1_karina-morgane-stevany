@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "test",
+    "name": "GORest!",
     "version": "1.0",
     "description": "Prends des pauses",
     "permissions": [
