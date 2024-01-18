@@ -26,11 +26,9 @@ Développer une extension pour le navigateur Chrome.
 
 ## Nos outils
 
-* Coopération : Slack
+* Coopération : Slack + VCS Live share + GitHub
 * Suivi de projet : Notion
 * IDE : VSCode
-* Versionning & save : Git / GitHub
-
 
 ## Description
 

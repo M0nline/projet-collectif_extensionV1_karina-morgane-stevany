@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateBadge, 1000);
 });
 
-
-
-
+// on update le counter
 function updateCounter() {
     chrome.storage.local.get(['totalTime', 'activityStartTime'], (result) => {
         const totalTime = result.totalTime || 0;
@@ -22,19 +20,13 @@ function updateCounter() {
             const elapsedSeconds = (currentTime - activityStartTime) / 1000;
             const totalSeconds = totalTime + elapsedSeconds;
             console.log("total : ", totalSeconds)
-            // if (totalSeconds > stopTime) {
-            //     console.log("stop");
-            //     affiche popup.html
-            // } else {
             const counterElement = document.getElementById('counter');
             counterElement.textContent = formatTime(totalSeconds);
-            // }
         }
     });
-        
 }
 
-
+// on affiche le compteur
 function formatTime(totalSeconds) {
     const minutes = Math.floor(totalSeconds / 60);
     minutesBadges = minutes;
@@ -43,32 +35,23 @@ function formatTime(totalSeconds) {
     return timing;
 }
 
-
-
+// on update l'affichage du text sur le badge
 const updateBadge = () => {
     console.log(minutesBadges);
     let minutesString = String(minutesBadges);
     chrome.action.setBadgeText({ text: minutesString });
 }
 
+// bouton reset de la popup
 document.addEventListener('DOMContentLoaded', () => {
-   
     const resetButton = document.getElementById('reset');
     resetButton.addEventListener('click', reset);
 });
 
+// on reinitialise les valeurs du timer 
 function reset() {
-    // je reinitialise les valeurs du timer 
     chrome.storage.local.set({ 'totalTime': 0, 'activityStartTime': new Date().getTime() }, () => {
         console.log('Reset time.');
-
         updateCounter();
-        
     });
 }
-
-
-
-
-
-
