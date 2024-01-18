@@ -1,3 +1,4 @@
+
 #blur {
     position: fixed;
     width: 100%;
@@ -7,10 +8,9 @@
     backdrop-filter: blur(10px);
     z-index:999998 ;
 }
-
-body {
-    background: #bf34d8;
+body{
     font-family: "Cambria";
+    box-sizing: border-box; 
 }
 
 #customPopup {
@@ -22,15 +22,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(94, 143, 227);
+    background-color: white;
     border-radius: 10px;
     box-sizing: border-box;
     padding: 20px 20px;
     border: 2px solid #d1f3fa;
     text-align: center;
     width: 400px;
-    height: 400px;
-    box-shadow: 0 0 15px #d1f3fa;
+    height: 350px;
+    box-shadow: 5px 5px 15px #d1f3fa;
     z-index: 999999;
 }
 
@@ -47,6 +47,7 @@ body {
     width: 80px;
     height: 80px;
     line-height: 60px;
+    
 }
 
 .popup-content .dismiss {

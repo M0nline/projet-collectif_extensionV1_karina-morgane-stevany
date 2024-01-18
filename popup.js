@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateBadge, 60000);
 });
 
+
+
+
 function updateCounter() {
     chrome.storage.local.get(['totalTime', 'activityStartTime'], (result) => {
         const totalTime = result.totalTime || 0;
@@ -28,6 +31,7 @@ function updateCounter() {
             // }
         }
     });
+        
 }
 
 
@@ -39,9 +43,32 @@ function formatTime(totalSeconds) {
     return timing;
 }
 
+
+
 const updateBadge = () => {
     console.log(minutesBadges);
     let minutesString = String(minutesBadges);
     chrome.action.setBadgeText({ text: minutesString });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+   
+    const resetButton = document.getElementById('reset');
+    resetButton.addEventListener('click', reset);
+});
+
+function reset() {
+    // je reinitialise les valeurs du timer 
+    chrome.storage.local.set({ 'totalTime': 0, 'activityStartTime': new Date().getTime() }, () => {
+        console.log('Reset time.');
+
+        updateCounter();
+        
+    });
+}
+
+
+
+
+
 
