@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCounter();
     // Mettre à jour le compteur toutes les secondes
     setInterval(updateCounter, 1000);
-    // // Mettre à jour le badge toutes les minutes
-    setInterval(updateBadge, 60000);
+    // Mettre à jour le badge toutes les minutes
+    setInterval(updateBadge, 1000);
 });
 
 
