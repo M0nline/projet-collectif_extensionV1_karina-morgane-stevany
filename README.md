@@ -10,7 +10,7 @@ Développer une extension pour le navigateur Chrome.
 ## Conditions 
 
 * Langages utilisés : Javascript, HTML/CSS
-* Durée du projet : 8 journées
+* Durée du projet : 9 journées
 
 ## Objectifs pédagogiques
 
@@ -34,7 +34,7 @@ Développer une extension pour le navigateur Chrome.
 
 ## Description
 
-Nous avons choisi de développer une extension à l'usage des personnes qui passent beaucoup de temps sur leur navigateur pour le travail et souhaitent être alertées sur la nécessité de faire une pause et de se lever.
+Nous avons choisi de développer une extension à l'usage des personnes qui passent beaucoup de temps sur leur navigateur pour des raisons professionnelles et souhaitent être alertées sur la nécessité de faire une pause et de se lever.
 
 Recommandations de l'INRS (prévention des risques) :
 > Faire une pause d’au moins 5 minutes toutes les heures si la tâche sur écran est intensive ou bien d'un quart d'heure toutes les 2 heures si la tâche l’est moins.
@@ -45,7 +45,7 @@ Recommandations de l'INRS (prévention des risques) :
 
 Nous avons fait le choix d'établir une V2, suite au constat de la difficulté à dépendre du DOM et des CSS de la page web sur laquelle la pop in se déclenche. La V2 contourne cette dépendance, en ayant recours à l'ouverture d'une fenêtre du navigateur.
 
-Une des difficultés à appréhender a été la circulation entre les différents fichiers de l'extension.
+Une autre difficulté à appréhender a été la circulation entre les différents fichiers de l'extension.
 
 ## Journal de bord 
 
